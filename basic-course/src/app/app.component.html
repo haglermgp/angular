@@ -1,0 +1,26 @@
+<form (submit)='addNewUser(newUser)' >
+	<input #newUser name='nameUser' type="text" placeholder="Write New User" >
+	<button>Add</button>
+</form>
+<ul>
+	<li *ngFor='let user of users' >
+		{{user}} <button (click)='deleteUser(user)' >X</button>
+	</li>
+</ul>
+
+<div>
+	<form>
+		<input type="text" name='name' [(ngModel)]='name' >
+		<input type="text" name='age' [(ngModel)]='age' >
+	</form>
+
+	<p><b>name:</b><span>{{name}}</span></p>
+	<p><b>age:</b><span>{{age}}</span></p>
+</div>
+
+<div *ngFor='let post of posts' >
+	<p><b>User id: </b> {{post.userId}} </p>
+	<p><b>Id: </b> {{post.id}} </p>
+	<p><b>Title: </b> {{post.title}} </p>
+	<p><b>Body: </b> {{post.body}} </p>
+</div>
